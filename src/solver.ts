@@ -124,7 +124,7 @@ export class Solver {
       if (leaving.type() === SymbolType.Invalid) {
         throw new Error('failed to find leaving row');
       }
-      rowPair = this._rowMap.erase(leaving)!;
+      rowPair = this._rowMap.erase(leaving);
       rowPair.second.solveForEx(leaving, marker);
       this._substitute(marker, rowPair.second);
     }
@@ -163,7 +163,7 @@ export class Solver {
     let expr = new Expression(variable);
     let cn = new Constraint(expr, Operator.Eq, undefined, strength);
     this.addConstraint(cn);
-    let tag = this._cnMap.find(cn)!.second;
+    let tag = this._cnMap.find(cn).second;
     let info = { tag, constraint: cn, constant: 0.0 };
     this._editMap.insert(variable, info);
   }
@@ -485,7 +485,7 @@ export class Solver {
         throw new Error('the objective is unbounded');
       }
       // pivot the entering symbol into the basis
-      let row = this._rowMap.erase(leaving)!.second;
+      let row = this._rowMap.erase(leaving).second;
       row.solveForEx(leaving, entering);
       this._substitute(entering, row);
       this._rowMap.insert(entering, row);
@@ -507,7 +507,7 @@ export class Solver {
     let infeasible = this._infeasibleRows;
     while (infeasible.length !== 0) {
       let leaving = infeasible.pop();
-      let pair = rows.find(leaving!);
+      let pair = rows.find(leaving);
       if (pair !== undefined && pair.second.constant() < 0.0) {
         let entering = this._getDualEnteringSymbol(pair.second);
         if (entering.type() === SymbolType.Invalid) {
@@ -515,8 +515,8 @@ export class Solver {
         }
         // pivot the entering symbol into the basis
         let row = pair.second;
-        rows.erase(leaving!);
-        row.solveForEx(leaving!, entering);
+        rows.erase(leaving);
+        row.solveForEx(leaving, entering);
         this._substitute(entering, row);
         rows.insert(entering, row);
       }
@@ -733,7 +733,7 @@ export class Solver {
   private _editMap = createEditMap();
   private _infeasibleRows: Symbol[] = [];
   private _objective: Row = new Row();
-  private _artificial: Row | null = null;
+  private _artificial: Row = null;
   private _idTick: number = 0;
 }
 
@@ -984,7 +984,7 @@ class Row {
    */
   public solveFor(symbol: Symbol): void {
     let cells = this._cellMap;
-    let pair = cells.erase(symbol)!;
+    let pair = cells.erase(symbol);
     let coeff = -1.0 / pair.second;
     this._constant *= coeff;
     for (let i = 0, n = cells.size(); i < n; ++i) {

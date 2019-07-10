@@ -104,7 +104,7 @@ class IndexedMap<T extends { id(): number }, U> {
    *
    * @param key The key to remove from the map.
    */
-  public erase(key: T): Pair<T, U> | undefined {
+  public erase(key: T): Pair<T, U> {
     const i = this.index[key.id()];
     if (i === undefined) {
       return undefined;
@@ -113,8 +113,8 @@ class IndexedMap<T extends { id(): number }, U> {
     const pair = this.array[i];
     const last = this.array.pop();
     if (pair !== last) {
-      this.array[i] = last!;
-      this.index[last!.first.id()] = i;
+      this.array[i] = last;
+      this.index[last.first.id()] = i;
     }
     return pair;
   }

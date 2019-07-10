@@ -1,5 +1,3 @@
-// import * as React from "react";
-// import { render } from "react-dom";
 import * as kiwi from "../src/kiwi";
 
 describe("kiwi", () => {

@@ -51,7 +51,7 @@ export class Constraint {
     if (rhs === undefined && expression instanceof Expression) {
       this._expression = expression;
     } else {
-      this._expression = expression.minus(rhs!);
+      this._expression = expression.minus(rhs);
     }
   }
 
