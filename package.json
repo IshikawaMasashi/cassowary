@@ -1,17 +1,10 @@
 {
-  "name": "react-contexify",
-  "version": "4.1.1",
+  "name": "@ishikawa_masashi/cassowary",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "./lib/index.d.ts",
-  "description": "Add contextmenu to your react component with ease",
-  "keywords": [
-    "react",
-    "context menu",
-    "react-component",
-    "menu",
-    "react-contextmenu",
-    "react-contexify"
-  ],
+  "description": "A fast, modern JavaScript version of the Cassowary hierarchial linear constraint solver",
+  "keywords": [],
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.dev.js",
     "test": "cross-env NODE_ENV=test jest --verbose",
@@ -29,16 +22,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fkhadra/react-contexify.git"
+    "url": "git+https://github.com/IshikawaMasashi/cassowary.git"
   },
-  "author": "Fadi Khadra <fdkhadra@gmail.com> (https://github.com/fkhadra)",
+  "author": "Ishikawa Masashi <Ishikawa_Masashi@hotmail.com> (https://github.com/IshikawaMasashi/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fkhadra/react-contexify/issues"
+    "url": "https://github.com/IshikawaMasashi/cassowary/issues"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.9",
-    "@types/enzyme": "^3.10.1",
+    "@types/enzyme": "^3.10.2",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.15",
     "@types/prop-types": "^15.7.1",
@@ -81,7 +74,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "npm-check-updates": "^3.1.17",
+    "npm-check-updates": "^3.1.18",
     "prop-types": "^15.7.2"
   }
 }
