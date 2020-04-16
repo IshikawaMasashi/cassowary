@@ -130,7 +130,7 @@ export class Variable {
   public toJSON(): any {
     return {
       name: this._name,
-      value: this._value
+      value: this._value,
     };
   }
 

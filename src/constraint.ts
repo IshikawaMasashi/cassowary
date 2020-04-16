@@ -24,7 +24,7 @@ import { Variable } from './variable';
 export enum Operator {
   Le, // <=
   Ge, // >=
-  Eq // ==
+  Eq, // ==
 }
 
 /**

@@ -116,7 +116,7 @@ export class Expression {
 
   public toString(): string {
     let result = this._terms.array
-      .map(function(pair) {
+      .map(function (pair) {
         return pair.second + '*' + pair.first.toString();
       })
       .join(' + ');
