@@ -5,7 +5,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier/@typescript-eslint",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
   ],
   "plugins": ["@typescript-eslint"],
   "env": { "node": true, "es6": true },
